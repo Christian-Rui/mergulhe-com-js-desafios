@@ -1,0 +1,19 @@
+{
+    "aulas": [
+        {
+            "id": 1,
+            "desafios": [
+                "<span>1.</span> Mostre um alerta com a mensagem 'Boas vindas ao nosso site!'.",
+                "<span>2.</span> Declare uma variável chamada nome e atribua a ela o valor 'Lua'.",
+                "<span>3.</span> Crie uma variável chamada idade e atribua a ela o valor 25.",
+                "<span>4.</span> Defina uma variável numeroDeVendas e atribua a ela o valor 50.",
+                "<span>5.</span> Defina uma variável saldoDisponivel e atribua a ela o valor 1000.",
+                "<span>6.</span> Exiba um alerta com o texto 'Erro! Preencha todos os campos'",
+                "<span>7.</span> Declare uma variável chamada mensagemDeErro e atribua a ela o valor 'Erro! Preencha todos os campos' Agora exiba um alerta com o valor da variável mensagemDeErro.",
+                "<span>8.</span> Use um prompt para perguntar o nome do usuário e armazená-lo na variável nome.",
+                "<span>9.</span> Peça ao usuário para digitar sua idade usando um prompt e armazene-a na variável idade.",
+                "<span>10.</span> Agora, caso a idade seja maior ou igual que 18, exiba um alerta com a mensagem 'Pode tirar a habilitação!'."
+            ]
+        }
+    ]
+}

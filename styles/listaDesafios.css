@@ -1,0 +1,40 @@
+body::before {
+    background-image: url("../img/code.png");
+}
+
+.container {
+    background-image: url("../img/Ruido.png");
+}
+
+#lista-desafios ul{
+    list-style: none;
+    margin-inline: 10%;
+}
+
+#lista-desafios ul li span{
+    font-weight: 600;
+}
+
+#lista-desafios ul li{
+    font-size: 18px;
+    line-height: 1.5;
+}
+
+#lista-desafios ul li:last-child{
+    margin-bottom: 16px;
+}
+
+#iniciar{
+    background-color: rgba(24, 118, 232, 0.502);
+    border: 1px solid #1875E8;
+    width: 200px;
+    border-radius: 15px;
+    padding-block: 16px;
+    font-size: 16px;
+    font-weight: 600;
+    cursor: pointer;
+}
+
+#iniciar:hover{
+    transform: scale(1.05);
+}

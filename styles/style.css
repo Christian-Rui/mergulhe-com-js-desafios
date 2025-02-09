@@ -53,6 +53,7 @@ body::before {
     align-items: center;
     justify-content: center;
     flex-direction: column;
+    width: 100%;
 }
 
 .container__botao {
@@ -68,6 +69,11 @@ body::before {
 
 .container__texto {
     margin: 16px 0 16px 0;
+    text-align: center;
+}
+
+.container__texto p{
+    margin-inline: 64px;
 }
 
 .container__texto-azul {
@@ -88,4 +94,42 @@ button {
 h2 {
     font-size: 32px;
     font-weight: 400;
+}
+
+/* Desafios */
+
+.desafios li{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background: #1875E8;
+    flex-basis: 200;
+    height: 200px;
+    flex-grow: 1;
+    max-width: 40%;
+    padding: 3%;
+    border-radius: 10px;
+    cursor: pointer;
+}
+
+.desafios li:hover{
+    transform: scale(1.05);
+}
+
+.desafios {
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    justify-content: center;
+    align-items: center;
+    gap: 30px;
+    width: 90%;
+}
+
+a {
+    color: white;
+    font-size: 24px;
+    text-wrap: wrap;
+    text-align: center;
+    text-decoration: none;
 }

@@ -1,71 +1,53 @@
-/* 
-Desafios 
+import { obterDesafiosPorId, exibirDesafios } from './leitorDeJson.js';
 
-Desafio aula 1:
+const idAula = 1; // Altere para o ID da aula que você deseja
+obterDesafiosPorId(idAula).then(desafios => {
+    exibirDesafios(desafios, idAula);
+});
 
-    1. Mostre um alerta com a mensagem "Boas vindas ao nosso site!".
+document.getElementById("iniciar").addEventListener("click", function () {
+    alert("Desafio 1");
 
-    2. Declare uma variável chamada nome e atribua a ela o valor "Lua".
+    // 1
+    alert("Boas vindas ao nosso site!");
 
-    3. Crie uma variável chamada idade e atribua a ela o valor 25.
+    // 2
+    let nome = "Lua";
 
-    4. Defina uma variável numeroDeVendas e atribua a ela o valor 50.
+    // 3
+    let idade = 25;
 
-    5. Defina uma variável saldoDisponivel e atribua a ela o valor 1000.
+    // 4
+    let numeroDeVendas = 50;
 
-    6. Exiba um alerta com o texto "Erro! Preencha todos os campos"
+    // 5
+    let saldoDisponivel = 1000;
 
-    7. Declare uma variável chamada mensagemDeErro e atribua a ela o valor "Erro! Preencha todos os campos" Agora exiba um alerta com o valor da variável mensagemDeErro.
+    // 6
+    let mensagemDeErro = "Erro! Preencha todos os campos";
 
-    8. Use um prompt para perguntar o nome do usuário e armazená-lo na variável nome.
+    alert(mensagemDeErro);
 
-    9. Peça ao usuário para digitar sua idade usando um prompt e armazene-a na variável idade.
+    alert(`Valores padrão armazenados:\n\nNome: ${nome}\nIdade: ${idade}\nNúmero de Vendas: ${numeroDeVendas}\nSaldo Disponível: ${saldoDisponivel}`);
 
-    10. Agora, caso a idade seja maior ou igual que 18, exiba um alerta com a mensagem "Pode tirar a habilitação!".
+    // 7
+    alert("Agora insira novos valores para o (Nome) e (Idade)");
 
-*/
+    function retornarPrompt(tipoValor) {
+        return prompt(`Digite s${tipoValor == "nome" ? "eu" : "ua"} ${tipoValor}`);
+    }
 
-alert("Desafio 1");
+    // 8
+    nome = retornarPrompt("nome");
 
-// 1
-alert("Boas vindas ao nosso site!");
+    // 9
+    idade = retornarPrompt("idade");
 
-// 2
-let nome = "Lua";
+    alert(`Valores armazenados:\n\nNome: ${nome}\nIdade: ${idade}`);
 
-// 3
-let idade = 25;
+    // 10
+    if (idade >= 18) {
+        alert("Pode tirar a habilitação!");
+    }
 
-// 4
-let numeroDeVendas = 50;
-
-// 5
-let saldoDisponivel = 1000;
-
-// 6
-let mensagemDeErro = "Erro! Preencha todos os campos";
-
-alert(mensagemDeErro);
-
-alert(`Valores padrão armazenados:\n\nNome: ${nomeDev}\nIdade: ${idade}\nNúmero de Vendas: ${numeroDeVendas}\nSaldo Disponível: ${saldoDisponivel}`);
-
-// 7
-alert("Agora insira novos valores para o (Nome) e (Idade)");
-
-function retornarPrompt(tipoValor) {
-    return prompt(`Digite s${tipoValor == "nome" ? "eu" : "ua"} ${tipoValor}`);
-}
-
-// 8
-nomeDev = retornarPrompt("nome");
-
-// 9
-idade = retornarPrompt("idade");
-
-alert(`Valores armazenados:\n\nNome: ${nomeDev}\nIdade: ${idade}`);
-
-// 10
-if (idade >= 18) {
-    alert("Pode tirar a habilitação!");
-}
-
+});
