@@ -104,3 +104,25 @@ if(verificarPromptNumerico(numero)){
 
 // 9
 console.log(contador(1, 10));
+
+// 10
+let nota = 8;
+
+if(nota >= 7){
+    console.log("Aprovado");
+} else {
+    console.log("Reprovado");
+}
+
+// 11
+function gerarNumeroAleatorio(numeroMaximo){
+    return parseInt(Math.random() * numeroMaximo + 1);
+}
+
+console.log(gerarNumeroAleatorio(5));
+
+// 12
+console.log(gerarNumeroAleatorio(10));
+
+// 13
+console.log(gerarNumeroAleatorio(1000));
