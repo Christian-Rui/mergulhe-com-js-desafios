@@ -1,14 +1,8 @@
-body::before {
-    background-image: url("../img/code.png");
-}
-
-.container {
-    background-image: url("../img/Ruido.png");
-}
-
 #lista-desafios ul{
     list-style: none;
-    margin-inline: 10%;
+    margin-inline: 5%;
+    max-height: 35vh;
+    overflow-y: auto;
 }
 
 #lista-desafios ul li span{
@@ -38,3 +32,20 @@ body::before {
 #iniciar:hover{
     transform: scale(1.05);
 }
+
+.voltar{
+    position: fixed; 
+    left: 0; 
+    top: 0; 
+    width: 80px; 
+    height: 50px; 
+    background-color: rgba(24, 118, 232, 0.502);
+    border: 1px solid #1875E8;
+    border-radius: 25px;
+    color: white;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin: 10px;
+}
+

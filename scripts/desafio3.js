@@ -1,42 +1,37 @@
-/* 
-Desafios 
-
-Desafio aula 3:
-
-    1. Crie um contador que comece em 1 e vá até 10 usando um loop while. Mostre cada número.
-
-    2. Crie um contador que começa em 10 e vá até 0 usando um loop while. Mostre cada número.
-
-    3. Crie um programa de contagem regressiva. Peça um número e conte deste número até 0, usando um loop while no console do navegador.
-
-    4. Crie um programa de contagem progressiva. Peça um número e conte de 0 até esse número, usando um loop while no console do navegador.
-
-*/
-
 import { verificarSeExisteValor, contador } from "./functions.js";
 
-// 1 e 2
+import { obterDesafiosPorId, exibirDesafios } from './leitorDeJson.js';
 
-alert(contador(1, 10));
-alert(contador(10, 0))
+const idAula = 3; // Altere para o ID da aula que você deseja
+obterDesafiosPorId(idAula).then(desafios => {
+    exibirDesafios(desafios, idAula);
+});
 
-// 3 e 4
+document.getElementById("iniciar").addEventListener("click", function () {
 
-function definirContagem(sentidoDaContagem) {
-    let texto = sentidoDaContagem > 0 ? "progressiva" : "regressiva";
+    // 1 e 2
 
-    let contagem = prompt(`Digite um valor para a contagem ${texto}`);
+    alert(contador(1, 10));
+    alert(contador(10, 0))
 
-    if (verificarSeExisteValor(contagem)) {
-        if (sentidoDaContagem > 0) {
-            alert(contador(0, Number(contagem)));
+    // 3 e 4
+
+    function definirContagem(sentidoDaContagem) {
+        let texto = sentidoDaContagem > 0 ? "progressiva" : "regressiva";
+
+        let contagem = prompt(`Digite um valor para a contagem ${texto}`);
+
+        if (verificarSeExisteValor(contagem)) {
+            if (sentidoDaContagem > 0) {
+                alert(contador(0, Number(contagem)));
+            }
+            else {
+                alert(contador(Number(contagem), 0));
+            }
+
         }
-        else {
-            alert(contador(Number(contagem), 0));
-        }
-
     }
-}
 
-definirContagem(-1);
-definirContagem(1);
+    definirContagem(-1);
+    definirContagem(1);
+});

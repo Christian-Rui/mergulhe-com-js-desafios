@@ -1,83 +1,73 @@
-/* 
-Desafios 
-
-Desafio aula 2:
-
-    1. Pergunte ao usuário qual é o dia da semana. Se a resposta for "Sábado" ou "Domingo", mostre "Bom fim de semana!". Caso contrário, mostre "Boa semana!".
-
-    2. Verifique se um número digitado pelo usuário é positivo ou negativo. Mostre um alerta informando.
-
-    3. Crie um sistema de pontuação para um jogo. Se a pontuação for maior ou igual a 100, mostre "Parabéns, você venceu!". Caso contrário, mostre "Tente novamente para ganhar.".
-
-    4. Crie uma mensagem que informa o usuário sobre o saldo da conta, usando uma template string para incluir o valor do saldo.
-
-    5. Peça ao usuário para inserir seu nome usando prompt. Em seguida, mostre um alerta de boas-vindas usando esse nome.
-
-*/
-
 import { verificarPromptNumerico, verificarSinal } from "./functions.js";
 
-alert("Desafio 2");
+import { obterDesafiosPorId, exibirDesafios } from './leitorDeJson.js';
 
-// 1
-let diaDaSemana = prompt("Qual é o dia da semana?");
-let listaDiasDoMeioDaSemana = ["segunda", "terca", "quarta", "quinta", "sexta"];
+const idAula = 2; // Altere para o ID da aula que você deseja
+obterDesafiosPorId(idAula).then(desafios => {
+    exibirDesafios(desafios, idAula);
+});
 
-function normalizarPalavra(palavra) {
-    // utiliza o normalize com NFD para decompor a palavra e seus diacríticos (acentuações e caracteres especiais)
-    // Exemplo: Sábado normalizado se torna: ["S", "´", "a", "b", "a", "d", "o"]
-    // replace retornar uma nova string removendo o valor especificado no primeiro argumento pelo segundo
-    // "/[\u0300-\u036f]/g": engloba todos os diacríticos entre \u0300 e \u036f, e "/g" descrevendo que é para verificar todas as ocorrências na string e não somente a primeira aparição
-    // "": o valor que será colocado no lugar, exemplo: "´" vai ser trocado por "", que no caso é 'nada', assim retornando  "Sabado" ao invés de "S´abado"
-    var palavraNormalizada = palavra.normalize('NFD').replace(/[\u0300-\u036f]/g, "");
+document.getElementById("iniciar").addEventListener("click", function () {
+    // 1
+    let diaDaSemana = prompt("Qual é o dia da semana?");
+    let listaDiasDoMeioDaSemana = ["segunda", "terca", "quarta", "quinta", "sexta"];
 
-    return palavraNormalizada.toLowerCase();
-}
+    function normalizarPalavra(palavra) {
+        // utiliza o normalize com NFD para decompor a palavra e seus diacríticos (acentuações e caracteres especiais)
+        // Exemplo: Sábado normalizado se torna: ["S", "´", "a", "b", "a", "d", "o"]
+        // replace retornar uma nova string removendo o valor especificado no primeiro argumento pelo segundo
+        // "/[\u0300-\u036f]/g": engloba todos os diacríticos entre \u0300 e \u036f, e "/g" descrevendo que é para verificar todas as ocorrências na string e não somente a primeira aparição
+        // "": o valor que será colocado no lugar, exemplo: "´" vai ser trocado por "", que no caso é 'nada', assim retornando  "Sabado" ao invés de "S´abado"
+        var palavraNormalizada = palavra.normalize('NFD').replace(/[\u0300-\u036f]/g, "");
 
-let semanaEmMinusculo = normalizarPalavra(diaDaSemana);
-
-if (semanaEmMinusculo == "sabado" || semanaEmMinusculo == "domingo") {
-    alert("Bom fim de semana!");
-} else if (diaDaSemana.trim() == "") {
-    alert("Nada foi digitado!");
-}
-else if (!listaDiasDoMeioDaSemana.includes(semanaEmMinusculo)) {
-    alert(`"${diaDaSemana}" não é um dia da semana ou foi escrito errado!\n\nRecarregue a página e tente novamente`);
-}
-else {
-    alert("Boa semana!");
-}
-
-// 2
-let numero = prompt("Digite um número positivo ou negativo");
-
-if(verificarPromptNumerico(numero)){
-    alert(verificarSinal(numero));
-}
-
-// 3
-let pontos = prompt("Digite quantos ponto você ganhou no 'O JOGO'");
-
-if(verificarPromptNumerico(pontos)){
-    if(pontos >= 100){
-        alert("Parabéns, você venceu!");
-    } else {
-        alert("Tente novamente para ganhar.");
+        return palavraNormalizada.toLowerCase();
     }
-}
 
-// 4
-let saldoConta = prompt("Digite o valor do seu saldo atual");
+    let semanaEmMinusculo = normalizarPalavra(diaDaSemana);
 
-if(verificarPromptNumerico(saldoConta)){
-    alert(`O seu saldo atual é de R$${saldoConta}`)
-}
+    if (semanaEmMinusculo == "sabado" || semanaEmMinusculo == "domingo") {
+        alert("Bom fim de semana!");
+    } else if (diaDaSemana.trim() == "") {
+        alert("Nada foi digitado!");
+    }
+    else if (!listaDiasDoMeioDaSemana.includes(semanaEmMinusculo)) {
+        alert(`"${diaDaSemana}" não é um dia da semana ou foi escrito errado!\n\nRecarregue a página e tente novamente`);
+    }
+    else {
+        alert("Boa semana!");
+    }
 
-// 5
-let nomeUsuario = prompt("Digite o seu nome:");
+    // 2
+    let numero = prompt("Digite um número positivo ou negativo");
 
-if(nomeUsuario.trim() !== ""){
-    alert(`Boas vindas, ${nomeUsuario}`);
-} else {
-    alert("Nada foi digitado...");
-}
+    if (verificarPromptNumerico(numero)) {
+        alert(verificarSinal(numero));
+    }
+
+    // 3
+    let pontos = prompt("Digite quantos ponto você ganhou no 'O JOGO'");
+
+    if (verificarPromptNumerico(pontos)) {
+        if (pontos >= 100) {
+            alert("Parabéns, você venceu!");
+        } else {
+            alert("Tente novamente para ganhar.");
+        }
+    }
+
+    // 4
+    let saldoConta = prompt("Digite o valor do seu saldo atual");
+
+    if (verificarPromptNumerico(saldoConta)) {
+        alert(`O seu saldo atual é de R$${saldoConta}`)
+    }
+
+    // 5
+    let nomeUsuario = prompt("Digite o seu nome:");
+
+    if (nomeUsuario.trim() !== "") {
+        alert(`Boas vindas, ${nomeUsuario}`);
+    } else {
+        alert("Nada foi digitado...");
+    }
+});

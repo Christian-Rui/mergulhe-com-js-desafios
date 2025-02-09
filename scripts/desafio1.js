@@ -6,8 +6,6 @@ obterDesafiosPorId(idAula).then(desafios => {
 });
 
 document.getElementById("iniciar").addEventListener("click", function () {
-    alert("Desafio 1");
-
     // 1
     alert("Boas vindas ao nosso site!");
 
