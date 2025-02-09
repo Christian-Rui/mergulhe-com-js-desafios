@@ -17,7 +17,7 @@ Neste projeto, fui além do que foi proposto nas aulas e implementei as seguinte
 
 ## Como Testar os Desafios
 
-Você pode acessar os desafios diretamente através do seguinte link: [Acesse os Desafios Aqui](LINK_AQUI).
+Você pode acessar os desafios diretamente através do seguinte link: [Acesse os Desafios Aqui](https://christian-rui.github.io/mergulhe-com-js-desafios/index.html).
 
 Alternativamente, você pode baixar este projeto e abrir o arquivo `index.html` em seu navegador para testar os desafios localmente.
 
