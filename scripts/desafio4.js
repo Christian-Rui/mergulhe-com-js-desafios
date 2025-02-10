@@ -32,11 +32,7 @@ document.getElementById("iniciar").addEventListener("click", function () {
     let resultado;
 
     function somar(valores) {
-        let soma = valores[0];
-        for (let i = 1; i < valores.length; i++) {
-            soma += valores[i];
-        }
-        return soma;
+        return valores.reduce((acc, curr) => acc + curr, 0);
     }
 
     resultado = somar([valor1, valor2]);
